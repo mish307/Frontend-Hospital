@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Mágico | Innovación y Salud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="fondo-animado"></div>
+
+    <header class="header-principal" id="inicio">
+        <nav class="navbar glass-panel">
+            <div class="logo"><i class="fa-solid fa-hospital-user"></i> Hospital Mágico</div>
+            <div class="botones-auth">
+                <button class="btn-secundario" onclick="document.getElementById('seccion-especialidades').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fa-solid fa-stethoscope"></i> Especialidades
+                </button>
+                <button class="btn-secundario" onclick="window.location.href='login.html'">
+                    <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+                </button>
+                <button class="btn-primario" onclick="window.location.href='registro.html'">
+                    <i class="fa-solid fa-user-plus"></i> Registrarse
+                </button>
+            </div>
+        </nav>
+
+        <div class="hero-contenido">
+            <h1>Cuidando tu salud con innovación</h1>
+            <p>Tecnología de punta y la calidez humana que tú y tu familia merecen.</p>
+        </div>
+
+        <div class="info-general">
+            <div class="tarjeta-info glass-panel">
+                <div class="icono-contenedor"><i class="fa-solid fa-hand-holding-medical"></i></div>
+                <h3>Nuestra Misión</h3>
+                <p>Brindar atención médica de excelencia, segura y humanizada, centrada en el bienestar integral de cada paciente.</p>
+            </div>
+            <div class="tarjeta-info glass-panel">
+                <div class="icono-contenedor"><i class="fa-solid fa-microscope"></i></div>
+                <h3>Nuestra Visión</h3>
+                <p>Ser el centro de salud referente en innovación médica y tecnología de vanguardia a nivel nacional.</p>
+            </div>
+            <div class="tarjeta-info glass-panel">
+                <div class="icono-contenedor"><i class="fa-solid fa-user-nurse"></i></div>
+                <h3>Nuestro Equipo</h3>
+                <p>Contamos con especialistas altamente capacitados, multidisciplinarios y comprometidos con tu recuperación.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="seccion-split" id="seccion-especialidades">
+        <div class="mitad-izquierda">
+            <div class="medio-circulo" id="circulo-imagen">
+                <div class="overlay-circulo"></div>
+                <div class="anillo-iconos" id="anillo-iconos" style="--giro: 0deg;">
+                    <div class="item-borde activo" style="--angulo: 0;" onclick="cambiarEspecialidad(0, this, 0)"><i class="fa-solid fa-truck-medical"></i><div class="tooltip">Urgencias</div></div>
+                    <div class="item-borde" style="--angulo: 60;" onclick="cambiarEspecialidad(1, this, 60)"><i class="fa-solid fa-heart-pulse"></i><div class="tooltip">Cardiología</div></div>
+                    <div class="item-borde" style="--angulo: 120;" onclick="cambiarEspecialidad(2, this, 120)"><i class="fa-solid fa-baby"></i><div class="tooltip">Pediatría</div></div>
+                    <div class="item-borde" style="--angulo: 180;" onclick="cambiarEspecialidad(3, this, 180)"><i class="fa-solid fa-brain"></i><div class="tooltip">Neurología</div></div>
+                    <div class="item-borde" style="--angulo: 240;" onclick="cambiarEspecialidad(4, this, 240)"><i class="fa-solid fa-bone"></i><div class="tooltip">Traumatología</div></div>
+                    <div class="item-borde" style="--angulo: 300;" onclick="cambiarEspecialidad(5, this, 300)"><i class="fa-solid fa-eye"></i><div class="tooltip">Oftalmología</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mitad-derecha">
+            <div class="info-contenido glass-panel" id="info-panel">
+                <button class="btn-volver-flotante" onclick="document.getElementById('inicio').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fa-solid fa-arrow-up"></i> Volver arriba
+                </button>
+
+                <div class="etiqueta-destacada">Especialidades Médicas</div>
+                <h2 id="info-titulo">Urgencias y Rescate</h2>
+                <p id="info-texto">Atención crítica inmediata 24/7. Nuestro equipo está altamente capacitado en maniobras de reanimación cardiopulmonar (RCP) y protocolos de seguridad, incluyendo el manejo avanzado de extintores para controlar emergencias.</p>
+                <button class="btn-primario btn-agendar">Agendar Hora Médica <i class="fa-solid fa-calendar-check"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass-panel footer-hospital">
+        <div class="footer-info">
+            <p><i class="fa-solid fa-location-dot icono-cyan"></i> Av. de la Salud 123, Alto Hospicio</p>
+            <p><i class="fa-solid fa-phone icono-cyan"></i> +56 9 8765 4321</p>
+            <p><i class="fa-solid fa-envelope icono-cyan"></i> contacto@hospitalmagico.cl</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Hospital Mágico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fondo-animado"></div>
+
+    <div class="auth-page">
+        <div class="auth-box glass-panel" style="max-width: 550px;">
+            <a href="index.html" class="btn-volver-auth"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+
+            <h2><i class="fa-solid fa-address-card icono-cyan"></i> Registro de Paciente</h2>
+            <p class="auth-subtitle">Crea tu ficha clínica electrónica</p>
+            
+            <form action="#">
+                <div class="form-row">
+                    <div class="input-group"><i class="fa-solid fa-user"></i><input type="text" placeholder="Nombre" required></div>
+                    <div class="input-group"><i class="fa-regular fa-user"></i><input type="text" placeholder="Apellido" required></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group"><i class="fa-solid fa-id-card"></i><input type="text" placeholder="RUT" required></div>
+                    <div class="input-group"><i class="fa-solid fa-phone"></i><input type="tel" placeholder="Número de contacto" required></div>
+                </div>
+
+                <label style="color: var(--texto-secundario); font-size: 0.85rem; margin-bottom: -5px; font-weight: 600;">Fecha de Nacimiento:</label>
+                <div class="input-group"><i class="fa-solid fa-calendar-days"></i><input type="date" required></div>
+                
+                <div class="input-group password-group">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" id="pwdRegistro" placeholder="Contraseña" required>
+                    <button type="button" class="btn-ojo" onclick="togglePassword('pwdRegistro')"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <div class="input-group password-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="pwdConfirmar" placeholder="Confirmar Contraseña" required>
+                    <button type="button" class="btn-ojo" onclick="togglePassword('pwdConfirmar')"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                
+                <button type="submit" class="btn-primario" style="width: 100%; justify-content: center; margin-top: 10px;">Completar Registro <i class="fa-solid fa-check"></i></button>
+            </form>
+            <p class="auth-link">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

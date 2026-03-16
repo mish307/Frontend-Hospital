@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Hospital Mágico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fondo-animado"></div>
+
+    <div class="auth-page">
+        <div class="auth-box glass-panel">
+            <a href="index.html" class="btn-volver-auth"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+            
+            <h2><i class="fa-solid fa-user-lock icono-cyan"></i> Iniciar Sesión</h2>
+            <p class="auth-subtitle">Ingresa a tu portal de paciente</p>
+            
+            <form action="#">
+                <div class="input-group">
+                    <i class="fa-solid fa-id-card"></i>
+                    <input type="text" placeholder="RUT (Ej: 12345678-9)" required>
+                </div>
+                
+                <div class="input-group password-group">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" id="pwdLogin" placeholder="Contraseña" required>
+                    <button type="button" class="btn-ojo" onclick="togglePassword('pwdLogin')"><i class="fa-solid fa-eye"></i></button>
+                </div>
+
+                <button type="submit" class="btn-primario" style="width: 100%; justify-content: center; margin-top: 10px;">Entrar <i class="fa-solid fa-right-to-bracket"></i></button>
+            </form>
+            
+            <p class="auth-link">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
