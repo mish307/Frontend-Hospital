@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Paciente | Inicio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="fondo-animado"></div>
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar glass-panel">
+            <div class="logo-sidebar" onclick="window.location.href='../index.html'">
+                <i class="fa-solid fa-hospital-user"></i> Hospital Mágico
+            </div>
+            
+            <nav class="menu-lateral">
+                <a href="panel.html" class="menu-item activo"><i class="fa-solid fa-house-medical"></i> Inicio</a>
+                <a href="agendar.html" class="menu-item"><i class="fa-solid fa-calendar-plus"></i> Agendar Hora</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-notes-medical"></i> Mis Citas</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-flask-vial"></i> Mis Exámenes</a>
+                <a href="perfil.html" class="menu-item"><i class="fa-solid fa-user-pen"></i> Mi Perfil</a>
+            </nav>
+
+            <div class="usuario-sidebar">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="info-user">
+                    <p class="nombre">Juan Pérez</p>
+                    <p class="rut">12.345.678-9</p>
+                </div>
+                <button class="btn-salir" onclick="window.location.href='../login.html'" title="Cerrar Sesión"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="header-dashboard">
+                <h2>Hola, Juan 👋</h2>
+                <p>Aquí tienes el resumen de tu salud al día de hoy.</p>
+            </div>
+
+            <div class="panel-grid">
+                
+                <div class="panel-card glass-panel card-destacada">
+                    <div class="card-header-bento">
+                        <h3><i class="fa-regular fa-calendar-check icono-cyan"></i> Tu Próxima Cita</h3>
+                        <span class="badge-estado badge-confirmada">Confirmada</span>
+                    </div>
+                    <div class="info-cita-destacada">
+                        <div class="fecha-box"><span class="mes">MAR</span><span class="dia">24</span></div>
+                        <div class="detalles-cita">
+                            <h4>Dr. Roberto Silva</h4>
+                            <p class="especialidad">Cardiología Intervencionista</p>
+                            <p class="hora-lugar"><i class="fa-regular fa-clock"></i> 10:30 AM &nbsp; | &nbsp; <i class="fa-solid fa-location-dot"></i> Piso 3, Box 12</p>
+                        </div>
+                    </div>
+                    <div class="acciones-card">
+                        <button class="btn-secundario btn-sm"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+                        <button class="btn-primario btn-sm"><i class="fa-solid fa-qrcode"></i> Ver QR de Ingreso</button>
+                    </div>
+                </div>
+
+                <div class="panel-card glass-panel">
+                    <div class="card-header-bento">
+                        <h3><i class="fa-solid fa-microscope icono-cyan"></i> Últimos Exámenes</h3>
+                    </div>
+                    <div class="lista-examenes">
+                        <div class="item-examen">
+                            <div class="examen-info"><h4>Perfil Lipídico</h4><p>Hace 2 días</p></div>
+                            <span class="badge-estado badge-listo">Listo</span>
+                            <button class="btn-icono-descarga"><i class="fa-solid fa-file-pdf"></i></button>
+                        </div>
+                        <div class="item-examen">
+                            <div class="examen-info"><h4>Hemograma Completo</h4><p>Hace 2 días</p></div>
+                            <span class="badge-estado badge-listo">Listo</span>
+                            <button class="btn-icono-descarga"><i class="fa-solid fa-file-pdf"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn-secundario btn-full" style="margin-top: 15px;">Ver todo el historial</button>
+                </div>
+
+                <div class="panel-card glass-panel flex-center">
+                    <h3>¿Qué necesitas hacer hoy?</h3>
+                    <div class="grid-acciones-rapidas">
+                        <div class="accion-rapida" onclick="window.location.href='agendar.html'">
+                            <div class="icono-accion"><i class="fa-solid fa-stethoscope"></i></div><p>Nueva Cita</p>
+                        </div>
+                        <div class="accion-rapida">
+                            <div class="icono-accion"><i class="fa-solid fa-pills"></i></div><p>Mis Recetas</p>
+                        </div>
+                        <div class="accion-rapida">
+                            <div class="icono-accion"><i class="fa-solid fa-file-invoice-dollar"></i></div><p>Pagos</p>
+                        </div>
+                        <div class="accion-rapida" onclick="window.location.href='perfil.html'">
+                            <div class="icono-accion"><i class="fa-solid fa-user-pen"></i></div><p>Mi Perfil</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

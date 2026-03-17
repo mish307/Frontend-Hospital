@@ -106,3 +106,76 @@ function togglePassword(inputId) {
     const input = document.getElementById(inputId);
     if (input) { input.type = input.type === "password" ? "text" : "password"; }
 }
+/* =========================================
+   ANIMACIÓN DE CONTADORES DE ESTADÍSTICAS
+   ========================================= */
+const counters = document.querySelectorAll('.counter');
+const speed = 200; // Velocidad de la animación
+
+const animateCounters = () => {
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText.replace('+', '');
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target + (target > 100 ? '+' : '');
+            }
+        };
+        updateCount();
+    });
+};
+
+// Observador para iniciar la animación solo cuando se ve en pantalla
+const observerOptions = { root: null, threshold: 0.1 };
+const statsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+const statsSection = document.querySelector('.seccion-stats');
+if(statsSection) {
+    statsObserver.observe(statsSection);
+}
+
+/* ==========================================================
+   LÓGICA DEL PANEL DE AGENDAMIENTO (WIZARD)
+   ========================================================== */
+
+// Función para avanzar o retroceder entre los pasos
+function cambiarPaso(pasoActual, pasoDestino) {
+    // Ocultar paso actual
+    const stepActual = document.getElementById('paso-' + pasoActual);
+    if (stepActual) stepActual.classList.remove('activo');
+
+    // Mostrar nuevo paso
+    const stepDestino = document.getElementById('paso-' + pasoDestino);
+    if (stepDestino) stepDestino.classList.add('activo');
+
+    // Actualizar los círculos de la barra de progreso
+    document.querySelectorAll('.progress-bar .step').forEach((indicador, index) => {
+        if (index < pasoDestino) {
+            indicador.classList.add('activo');
+        } else {
+            indicador.classList.remove('activo');
+        }
+    });
+}
+
+// Función para seleccionar tarjetas (Especialidad, Doctor u Hora)
+function seleccionarOpcion(elemento, grupo) {
+    // Buscar todos los elementos del mismo grupo (para desmarcarlos)
+    const hermanos = elemento.parentElement.querySelectorAll('.card-opcion, .hora-slot');
+    hermanos.forEach(hermano => hermano.classList.remove('seleccionado'));
+    
+    // Marcar el que recibió el clic
+    elemento.classList.add('seleccionado');
+}

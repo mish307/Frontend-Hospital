@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Paciente | Mis Citas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="fondo-animado"></div>
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar glass-panel">
+            <div class="logo-sidebar" onclick="window.location.href='../index.html'">
+                <i class="fa-solid fa-hospital-user"></i> Hospital Mágico
+            </div>
+            
+            <nav class="menu-lateral">
+                <a href="panel.html" class="menu-item"><i class="fa-solid fa-house-medical"></i> Inicio</a>
+                <a href="agendar.html" class="menu-item"><i class="fa-solid fa-calendar-plus"></i> Agendar Hora</a>
+                <a href="mis-citas.html" class="menu-item activo"><i class="fa-solid fa-notes-medical"></i> Mis Citas</a>
+                <a href="mis-examenes.html" class="menu-item"><i class="fa-solid fa-flask-vial"></i> Mis Exámenes</a>
+                <a href="perfil.html" class="menu-item"><i class="fa-solid fa-user-pen"></i> Mi Perfil</a>
+            </nav>
+
+            <div class="usuario-sidebar">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="info-user">
+                    <p class="nombre">Juan Pérez</p>
+                    <p class="rut">12.345.678-9</p>
+                </div>
+                <button class="btn-salir" onclick="window.location.href='../login.html'" title="Cerrar Sesión"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="header-dashboard">
+                <h2>Mis Citas Médicas</h2>
+                <p>Revisa tus próximas reservas y tu historial de atenciones.</p>
+            </div>
+
+            <div class="panel-grid" style="grid-template-columns: 1fr;"> <div class="panel-card glass-panel card-destacada">
+                    <div class="card-header-bento">
+                        <h3><i class="fa-regular fa-calendar-check icono-cyan"></i> Próximas Citas</h3>
+                        <button class="btn-primario btn-sm" onclick="window.location.href='agendar.html'"><i class="fa-solid fa-plus"></i> Nueva Cita</button>
+                    </div>
+                    
+                    <div class="info-cita-destacada" style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                        <div class="fecha-box"><span class="mes">MAR</span><span class="dia">24</span></div>
+                        <div class="detalles-cita" style="flex: 1;">
+                            <h4>Dr. Roberto Silva</h4>
+                            <p class="especialidad">Cardiología Intervencionista</p>
+                            <p class="hora-lugar"><i class="fa-regular fa-clock"></i> 10:30 AM &nbsp; | &nbsp; <i class="fa-solid fa-location-dot"></i> Piso 3, Box 12</p>
+                        </div>
+                        <div class="acciones-card" style="flex-direction: column; gap: 10px;">
+                            <span class="badge-estado badge-confirmada" style="text-align: center;">Confirmada</span>
+                            <button class="btn-secundario btn-sm" style="color: #ef4444; border-color: rgba(239,68,68,0.3);"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="info-cita-destacada" style="margin-top: 20px; margin-bottom: 0;">
+                        <div class="fecha-box" style="background: rgba(245, 158, 11, 0.1);"><span class="mes" style="color:#fbbf24;">ABR</span><span class="dia">05</span></div>
+                        <div class="detalles-cita" style="flex: 1;">
+                            <h4>Dra. Elena Ramos</h4>
+                            <p class="especialidad">Medicina General</p>
+                            <p class="hora-lugar"><i class="fa-regular fa-clock"></i> 15:00 PM &nbsp; | &nbsp; <i class="fa-solid fa-video"></i> Telemedicina</p>
+                        </div>
+                        <div class="acciones-card" style="flex-direction: column; gap: 10px;">
+                            <span class="badge-estado" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); text-align: center;">Pendiente de Pago</span>
+                            <button class="btn-primario btn-sm"><i class="fa-solid fa-credit-card"></i> Pagar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-card glass-panel">
+                    <div class="card-header-bento">
+                        <h3><i class="fa-solid fa-clock-rotate-left icono-cyan"></i> Historial de Atenciones</h3>
+                    </div>
+                    <div class="lista-examenes">
+                        <div class="item-examen">
+                            <div class="examen-info">
+                                <h4>Traumatología - Dra. Sofía Castro</h4>
+                                <p>12 de Enero, 2026</p>
+                            </div>
+                            <span class="badge-estado" style="background: rgba(255,255,255,0.1); color: var(--texto-secundario);">Realizada</span>
+                            <button class="btn-secundario btn-sm" style="padding: 5px 15px;"><i class="fa-solid fa-prescription"></i> Ver Receta</button>
+                        </div>
+                        <div class="item-examen">
+                            <div class="examen-info">
+                                <h4>Oftalmología - Dr. Marcos Vega</h4>
+                                <p>05 de Noviembre, 2025</p>
+                            </div>
+                            <span class="badge-estado" style="background: rgba(255,255,255,0.1); color: var(--texto-secundario);">Realizada</span>
+                            <button class="btn-secundario btn-sm" style="padding: 5px 15px;"><i class="fa-solid fa-prescription"></i> Ver Receta</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
